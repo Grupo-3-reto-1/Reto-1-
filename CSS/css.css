@@ -20,6 +20,11 @@ header {
     font-stretch: extra-condensed;
 }
 
+#tutorial {
+    width: 90%;
+    height: 100%;
+}
+
 .logosredessociales {
     width: 35px;
     height: 35px;
@@ -35,7 +40,6 @@ nav {
     font-family: Verdana, Geneva, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    float: center;
     margin-top: 0.2%;
 
 }
@@ -98,14 +102,7 @@ footer {
     margin-top: 3%;
 }
 
-aside {
-    background-color: pink;
-    margin-top: 0%;
-    padding: 1em;
-    text-align: center;
-    padding-left: 12%;
 
-}
 
 section {
     background-image: url(../RECURSOS/fondo.png);
@@ -124,17 +121,64 @@ section {
 #boton {
     float: right;
     position: fixed;
-    margin-left: -46.7%;
+    margin-left: -47.3%;
     font-stretch: extra-condensed;
-    
+    padding-top: 80%;
+
 }
 
-p{
+p {
     text-align: justify
 }
 
-@media screen and (min-width: 550px) {
-    
+@media screen and (min-width: 600px) and (max-width:1024px) {
+
+    #contenedor {
+        display: flex;
+
     }
 
+    nav {
+        width: 440px;
+        order: 2;
+        flex-basis: 250px;
+        flex-shrink: 0;
+        text-align: center;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+
+    .li {
+        padding: 15%;
+        margin-top: 7%;
+        margin-bottom: 7%;
+        font-size: 23px;
+    }
+
+    .block {
+        margin-left: 2%;
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    nav {
+        background-color: #020E26;
+        margin-bottom: 0.2%;
+        /*right:05;*/
+        padding: 0.5em;
+        font-family: Verdana, Geneva, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        float: center;
+        margin-top: 0.2%;
+        display: flex;
+
+    }
+    nav li a {
+        display: flex;
+        text-decoration: none;
+        padding: .5em 1em;
+        margin-top: 1%;
+    }
 }
