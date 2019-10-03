@@ -132,3 +132,9 @@ section {
 p{
     text-align: justify
 }
+
+@media screen and (min-width: 550px) {
+    
+    }
+
+}
