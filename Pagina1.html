@@ -103,7 +103,7 @@
                 <p> <img id="tutorial" src="RECURSOS/tutorial1.png" alt="Italian Trulli"><br>
                         Habiendo instalado el sistema operativo debemos instalar y configurar el servicio apache
                         <br>
-                        Para ello abriremos la consola de comandos de linux y escribimos los siguentes comandos
+                        Para ello abriremos la consola de comandos de linux y escribimos los siguentes comandos:
                         <p class="apt">
                         <br>
                         apt-get update
@@ -114,23 +114,25 @@
                         </p>
                         <br>
                         <br>
-                        Una vez instalado debemos abrir el archivo de configuracion mediante el comando
+                        <p>Una vez instalado debemos abrir el archivo de configuracion mediante el comando</p>
                         <p class="apt">sudo nano /etc/apache2/apache2.conf</p>
                         <br>
+                        <p>
                         Dentro del archivo de confiuracion añadimos esta linea al final del todo
                         ServerName Dominio_o_ip
                         <br>
                         Hacemos un sudo apache2ctl configtest para asegurarnos de que todo funciona correctamente
                         <br>
-                        Y al final reincimaos el apache con el comando
+                        Y al final reincimaos el apache con el comando:</p>
                         <p class="apt">sudo systemctl restart apache2</p>
                         <br>
-                        Tambien debemos asegurarnos de que el firewall esta bien configurado con
+                        <p>
+                        Tambien debemos asegurarnos de que el firewall esta bien configurado con:</p>
                         <p class="apt">sudo ufw app info "Apache Full"</p>
                         <br>
-                        ejecutamos el comando sudo ufw allow in "Apache Full" para permitir el trafico entrante
+                        <p>ejecutamos el comando sudo ufw allow in "Apache Full" para permitir el trafico entrante
                         <br>
-                        ya podemos entrar a la pagina web utilizando http://ip del servidor
+                        ya podemos entrar a la pagina web utilizando http://ip del servidor</p>
                         <br>
 
                 </p>
