@@ -154,6 +154,12 @@ h2{
 
     }
 
+    #tutorial {
+        width: 80%;
+        margin:3%;
+        margin-left:30%;
+    }
+
     nav {
         width: 440px;
         order: 2;
@@ -182,13 +188,16 @@ h2{
         display: none;
 
     }
-    #tutorial {
-        width: 60%;
-        height: 100%;
-    }
+   
 }
 
 @media screen and (min-width: 1080px) {
+    
+    #tutorial {
+        width: 50%;
+        margin:3%;
+        margin-left:30%;
+    }
     ul {
         display: flex;
         
@@ -230,11 +239,7 @@ h2{
 
     }
 
-    #tutorial {
-        width: 50%;
-        margin:3%;
-        margin-left:30%;
-    }
+    
 
     header {
         background-color: #020E26;
