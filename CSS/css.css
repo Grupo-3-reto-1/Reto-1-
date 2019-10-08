@@ -41,6 +41,12 @@ nav {
 
 }
 
+.apt{
+    background-color: black;
+    color: white;
+    width: 50%;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -198,7 +204,7 @@ p {
 
     header {
         height: 14%;
-        ps
+        
     }
 
     #boton {

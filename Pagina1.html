@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grupo 3 Wiki</title>
+    <link rel="stylesheet" type="text/css" href="CSS/css.css">
+    <link rel="shortcut icon" href="RECURSOS/logo.png" type="image/x-icon" />
+</head>
+
+<body>
+    <header>
+        <a href="Pagina1.html">
+            <img id="logo" src="RECURSOS/logo.png" alt="Italian Trulli">
+        </a>
+    </header>
+    <div id="contenedor">
+        <nav>
+            <ul>
+                <!--MENU-->
+
+                <li><a class="li" href="Pagina1.html#inicio"> INSTALACIÓN DEL PROXMOX </a></li>
+                <li><a class="li" href="Pagina1.html#necesidades"> INSTALACIÓN DEL SERVIDOR WEB</a></li>
+                <li><a class="li" href="Pagina1.html#instalacion"> INSTALACIÓN DEL APACHE2</a></li>
+                <li><a class="li" href="Pagina1.html#configuracion"> COPIAS DE SEGURIDAD</a></li>
+
+            </ul>
+
+        </nav>
+        <section id="style-1">
+            <a id="boton" href="Pagina1.html#contenedor"><img id="botonsubir" src="RECURSOS/botonsubir.png"
+                    alt="Italian Trulli"></a>
+            <article class="block" id="inicio">
+
+                <h2>INSTALACIÓN DEL PROXMOX</h2>
+                <p>
+
+                    Lo primero que neciesitaremos para poder crear nuestro servidor es instalar Proxmox
+                    Para ello deberemos Descargar la iso de la sigiente pagina.
+                    <a href="https://www.proxmox.com/en/downloads">https://www.proxmox.com/en/downloads</a></li>
+
+
+                    Una vez tengamos la iso debemos crear un USB booteable para ello utilizaremos
+                    <a href="https://etcher.io">Etcher</a>
+
+
+                    El siguinte paso tendremos que insertar el usb booteable en la maquina en la que queremos
+                    instalar el proxmox y cambiar el orden de arranque.
+
+                    <br>
+
+                    El proximos pasos se basan en la configuracion del proxmox. En esta guia enseñaremos nuestra
+                    configuracion.
+
+                    Lo primero que tenemos que hacer es decidir la particion donde queremos que se instale el proxmox.
+
+                    Ahora toca decidir las caracteristicas que queramos que tenga como la IP del servidor y su gateway
+                    como la
+                    contraseña y el puerto de acceso entre otros.
+                    <br>
+                    <img id="tutorial" src="RECURSOS/proxmox.png" alt="Italian Trulli">
+                    <br>
+                    Una vez terminada la instalacion acabaremos en esta pantalla que nos dice que reiniciemos y
+                    entremos desde otra maquina antes de reiniciar.
+                    Es recomendable hacer una foto a esta pantalla ya que es muy importante acordarnos de las
+                    configuraciones que hemos hecho.
+
+
+
+
+                </p>
+            </article>
+            <article class="block" id="necesidades">
+
+
+                <h2>INSTALACIÓN DEL SERVIDOR WEB</h2>
+                <p>
+
+                    Habiendo completado la instalacion reinicimos la maquina
+                    <br>
+                    Despues de reinciar debemos entrar a la ip de la maquina Proxmox utilizando otra maquina en la misma
+                    red llamaremos a esta maquina "cliente"
+                    <br>
+                    Desde el cliente empezaremos el proceso de creacion de una nueva maquina virtual
+                    <br>
+                    <img id="tutorial" src="RECURSOS/maquina.png" alt="Italian Trulli">
+                    <br>
+                    Para ello tendremos que subir una iso del sistema que queramos utilizar para el servidor web (en
+                    nuestro caso utilizaremos Ubuntu 16.4)
+                    <br>
+                    Una vez hayamos subido la iso debemos especificar las caracteristicas de la maquina teniendo en
+                    cuenta las limitaciones fisicas de la maquina Proxmox
+                    <br>
+                    Lo siguiente sera instalar el sistema operativo de manera habitual
+
+                </p>
+            </article>
+            <article class="block" id="instalacion">
+                <h2>INSTALACIÓN DEL APACHE2</h2>
+                <img id="tutorial" src="RECURSOS/tutorial1.png" alt="Italian Trulli">
+                <p>
+                        Habiendo instalado el sistema operativo debemos instalar y configurar el servicio apache
+                        <br>
+                        Para ello abriremos la consola de comandos de linux y escribimos los siguentes comandos
+                        <p class="apt">
+                        <br>
+                        apt-get update
+                        <br>
+                        apt-get upgrade
+                        <br>
+                        sudo apt-get install apache2 apache2-doc apache2-utils
+                        </p>
+                        <br>
+                        <br>
+                        Una vez instalado debemos abrir el archivo de configuracion mediante el comando
+                        <p class="apt">sudo nano /etc/apache2/apache2.conf</p>
+                        <br>
+                        Dentro del archivo de confiuracion añadimos esta linea al final del todo
+                        ServerName Dominio_o_ip
+                        <br>
+                        Hacemos un sudo apache2ctl configtest para asegurarnos de que todo funciona correctamente
+                        <br>
+                        Y al final reincimaos el apache con el comando
+                        <p class="apt">sudo systemctl restart apache2</p>
+                        <br>
+                        Tambien debemos asegurarnos de que el firewall esta bien configurado con
+                        <p class="apt">sudo ufw app info "Apache Full"</p>
+                        <br>
+                        ejecutamos el comando sudo ufw allow in "Apache Full" para permitir el trafico entrante
+                        <br>
+                        ya podemos entrar a la pagina web utilizando http://ip del servidor
+                        <br>
+
+                </p>
+            </article>
+            <article class="block" id="configuracion">
+                <h2> COPIAS DE SEGURIDAD</h2>
+                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum
+                    ha sido
+                    el
+                    texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T.
+                    persona que
+                    se
+                    dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró
+                    hacer
+                    un
+                    libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de
+                    relleno
+                    en
+                    documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s
+                    con la
+                    creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
+                    recientemente con
+                    software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem
+                    Ipsum.Lorem
+                    Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha
+                    sido el
+                    texto
+                    de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona
+                    que se
+                    dedica
+                    a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer
+                    un libro
+                    de
+                    textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en
+                    documentos
+                    electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la
+                    creación de
+                    las
+                    hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software
+                    de
+                    autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+                <img id="tutorial" src="RECURSOS/tutorial1.png" alt="Italian Trulli">
+            </article>
+
+        </section>
+
+    </div>
+    <footer>
+        <ul>
+            <li><a href="http://instagram.com">Instagram
+                    <img class="logosredessociales" src="RECURSOS/instagram-logo.png">
+                </a>
+            </li>
+            <li><a href="http://facebook.com">Facebook
+                    <img class="logosredessociales" src="RECURSOS/facebook-logo.png">
+                </a>
+            <li><a href="http://twitter.com">Twitter
+                    <img class="logosredessociales" src="RECURSOS/twitter-logo.png">
+                </a>
+            <li><a href="http://youtube.com">YouTube
+                    <img class="logosredessociales" src="RECURSOS/youtube-logo.png">
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>
